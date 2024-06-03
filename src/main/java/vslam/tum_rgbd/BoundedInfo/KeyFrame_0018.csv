@@ -1,0 +1,5 @@
+Class,Confidence,X,Y,Width,Height
+teddy bear,0.921366,70,83,77,108
+chair,0.870267,464,165,176,249
+book,0.618901,129,166,62,26
+tvmonitor,0.506349,185,79,55,121

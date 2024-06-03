@@ -1,0 +1,5 @@
+Class,Confidence,X,Y,Width,Height
+keyboard,0.995139,425,147,156,49
+mouse,0.988544,587,204,30,23
+tvmonitor,0.952972,434,13,168,137
+teddy bear,0.938436,225,109,259,253

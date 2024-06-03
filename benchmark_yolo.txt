@@ -1,0 +1,2 @@
+Total processing time: 80972 ms for 87 frames.
+Average time per frame: 915 ms.

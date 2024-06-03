@@ -1,0 +1,5 @@
+Class,Confidence,X,Y,Width,Height
+bottle,0.967445,60,262,47,94
+mouse,0.948472,5,404,64,63
+refrigerator,0.662003,328,-1,90,87
+book,0.646098,193,186,112,67

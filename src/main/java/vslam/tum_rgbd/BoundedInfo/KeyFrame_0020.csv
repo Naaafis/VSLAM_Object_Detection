@@ -1,0 +1,4 @@
+Class,Confidence,X,Y,Width,Height
+teddy bear,0.928609,-1,92,77,115
+chair,0.893634,431,138,185,223
+mouse,0.684753,69,265,40,22

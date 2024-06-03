@@ -1,0 +1,4 @@
+Class,Confidence,X,Y,Width,Height
+bottle,0.969635,157,257,48,112
+mouse,0.734208,110,415,57,63
+keyboard,0.631240,0,323,130,98

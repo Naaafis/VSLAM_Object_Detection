@@ -1,0 +1,4 @@
+Class,Confidence,X,Y,Width,Height
+mouse,0.841598,496,423,98,57
+tvmonitor,0.770743,433,-2,207,291
+teddy bear,0.646202,0,-6,251,493

@@ -1,0 +1,4 @@
+Class,Confidence,X,Y,Width,Height
+vase,0.995808,414,304,63,76
+chair,0.992384,112,294,143,176
+tvmonitor,0.551602,346,145,234,148

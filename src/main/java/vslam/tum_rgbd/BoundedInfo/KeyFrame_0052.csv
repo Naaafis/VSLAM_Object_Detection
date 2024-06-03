@@ -1,0 +1,5 @@
+Class,Confidence,X,Y,Width,Height
+keyboard,0.988408,291,198,129,39
+chair,0.955053,166,302,250,173
+tvmonitor,0.827685,267,77,148,118
+book,0.571689,486,181,141,64

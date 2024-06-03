@@ -1,0 +1,5 @@
+Class,Confidence,X,Y,Width,Height
+bottle,0.909545,117,69,42,92
+bottle,0.691796,153,95,22,53
+teddy bear,0.592047,441,-1,113,118
+cup,0.507913,69,223,39,40

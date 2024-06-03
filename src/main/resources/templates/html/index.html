@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>VSlam</title>
+    <link rel="stylesheet" href="../style/main.css">
+    <!-- Include three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src='https://cdn.plot.ly/plotly-2.31.1.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js'></script>
+</head>
+
+<body>
+
+<h1>Integrating RGBD-VSLAM with Object Detection and Tracking</h1>
+<p> Visual Simultaneous Localization and Mapping (VSLAM) is the process of taking camera feed, as well as its position, and building a map of the current local world, specifically using visual input. This project uses this process, and builds upon it by also tracking objects within a frame. In this comes two problems: object detection, and then subsequent mapping and tracking of objects within a 3D space. For more information go <a href="https://agile.bu.edu/gitlab/ec504/ec504_projects/group8/-/blob/master/README.md?ref_type=heads">here</a></p>
+<p>These are the steps to this process:</p>
+<ol>
+    <li>Taking a video source as input, start the VSLAM algorithm to iteratively build a worldmap</li>
+    <li>Save the finalized and error-corrected worldmap, as well as the camera position for each important frame</li>
+    <li>Use YOLOv4 ConvNet on each frame, a model that returns 2D bounding boxes around objects found within an image</li>
+    <li>Project the 3D points collected from VSLAM onto each frame</li>
+    <li>For each 2D bounding box, create a potential object containing all 3D points that are projected within its bounds</li>
+    <li>Check if there is overlap in this set of points when comparing to past objects from other frames</li>
+    <li>Given sufficient overlap, combine these objects using intersection on the points</li>
+</ol>
+
+<p>Given some video of an environment, the output of this algorithm is essentially 3D groupings of points that correspond to objects within that environment.</p>
+
+<h3>Select a dataset from the dropdown below. It will take some time to process the dataset.</h3>
+
+<select id="render_form">
+    <option value="none" selected disabled hidden>Select an Option</option>
+    <option value="1">Office 1</option>
+    <option value="2">Office 2</option>
+    <option value="3">Office 3</option>
+</select>
+
+<div id="loading"></div>
+<div class="container" id="resultContainer">
+    <h5>Select An Object To View Point Cloud With That Object Highlighted</h5>
+    <div id="objectList">
+        <!-- this is where object buttons will appear after rendering -->
+    </div>
+</div>
+
+<div id="myDiv"></div>
+<script src="../js/buildPC.js"></script>
+</body>
+
+</html>
+
+
+
+

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.ec504.group8</groupId>
+    <artifactId>vslam-objects</artifactId>
+    <version>1.0</version>
+
+     <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <exec.mainClass>top.BackendJava</exec.mainClass>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.0</version> <!-- Try changing the version here -->
+                <configuration>
+                    <source>17</source>
+                    <target>17</target>
+                    <compilerArgs>
+                        <arg>-parameters</arg>
+                    </compilerArgs>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    <dependencies>
+        <!-- Spring Boot Starter Web -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <version>3.2.4</version>
+        </dependency>
+
+        <!-- Spring Boot Starter Thymeleaf -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+            <version>3.2.4</version>
+        </dependency>
+
+        <!-- Spring Boot DevTools -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-devtools</artifactId>
+            <version>3.2.4</version>
+        </dependency>
+
+        <!-- Spring Web MVC -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>6.1.4</version>
+        </dependency>
+
+        <!-- Gson for JSON processing -->
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.8.9</version>
+        </dependency>
+
+        <!-- MongoDB Driver -->
+        <dependency>
+            <groupId>org.mongodb</groupId>
+            <artifactId>mongodb-driver-sync</artifactId>
+            <version>4.7.1</version>
+        </dependency>
+
+        <!-- JavaCV dependencies -->
+        <dependency>
+            <groupId>org.bytedeco</groupId>
+            <artifactId>javacv</artifactId>
+            <version>1.5.7</version>
+        </dependency>
+        <dependency>
+            <groupId>org.bytedeco</groupId>
+            <artifactId>javacv-platform</artifactId>
+            <version>1.5.7</version>
+        </dependency>
+        <dependency>
+            <groupId>org.bytedeco</groupId>
+            <artifactId>opencv-platform</artifactId>
+            <version>4.5.5-1.5.7</version>
+        </dependency>
+        <dependency>
+            <groupId>org.bytedeco</groupId>
+            <artifactId>javacpp</artifactId>
+            <version>1.5.7</version>
+        </dependency>
+        <dependency>
+            <groupId>com.opencsv</groupId>
+            <artifactId>opencsv</artifactId>
+            <version>5.7.0</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.ejml/ejml-all -->
+        <dependency>
+            <groupId>org.ejml</groupId>
+            <artifactId>ejml-all</artifactId>
+            <version>0.41</version>
+        </dependency>
+
+
+
+
+        <!-- Spring Boot Starter Test -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <version>3.2.4</version>
+            <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.junit.v4</groupId>
+                    <artifactId>junit</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+    </dependencies>
+</project>

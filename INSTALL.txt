@@ -1,0 +1,64 @@
+INSTALL.txt
+===========
+
+Pre-conditions:
+---------------
+This code requires a Unix/Linux-based system due to the shell script dependencies and environment configurations. It has been specifically tested on standard lab machines but should be compatible with most Linux distributions. The software relies on Java 17 and Apache Maven, which are included in the installation steps.
+
+Hardware Requirements:
+- A machine capable of running Java 17 efficiently, preferably with at least 4GB of RAM for optimal performance of the object detection and VSLAM processing.
+
+Software Requirements:
+- Java JDK 17
+- Apache Maven 3.9.6
+- A Unix/Linux-based operating system
+
+Supporting Files:
+-----------------
+All required libraries are managed through Maven, which will handle the dependencies automatically as specified in the project's pom.xml file. No additional manual installation of libraries is required beyond the initial setup performed by `install.sh`.
+
+Examples of Project Usage:
+
+- `data_installation.sh`: Download and install one of two datasets based on the user's input. The available options are:
+    1. TUM_RGB: The Freiburg3 Long Office Household dataset, suitable for testing robustness in indoor environments.
+    2. EuRoC_Mav: The Machine Hall 01 Easy dataset from the EuRoC MAV dataset series, ideal for aerial vehicle-based environments.
+
+    Usage Example:
+    `./data_installation.sh TUM_RGB`
+    `./data_installation.sh EuRoC_Mav`
+
+    *NOTE TO PEER REVIEWERS: RUNNING THIS SCIPT IS NOT NECESSARY FOR ASSESSMENT OF OUR PROJECT. We provided KeyFrames to execute the main components already*
+
+- `run_obj_detection.sh`: Perform object detection on generated key frames, modifying the project configuration temporarily to use YOLO.
+
+    To measure effectiveness of this script, remove the following two provided directories `/src/main/java/vslam/BoundedInfo` and `/src/main/java/vslam/BoundedKeyFrames`
+    Execution of this script should regenerate those two directories
+
+    *NOTE TO PEER REVIEWERS: RUNNING THIS SCIPT IS NOT NEEDED TO EXECUTE OUR PROJECT. THE BoundedInfo is pregenerated for your convinience*
+
+- `data_installation.sh` installs a large amount of data and `run_vslam.sh` executes Matlab code under the hood, so they are not required to be run by peer reviewers
+
+Descriptions of Testing Patterns:
+---------------------------------
+Testing in this project is divided into two main categories:
+1. Object Detection Tests:
+   - Once Maven is succesfully installed, you can execute the testing scripts by opening a terminal in the 'group8' directory and executing the 'mvn test' command. After the test completion, you can verify results of the unit tests. The tests focus on edge cases, precision, and equality for the 'Point', 'ObjectSet', and 'BoundingBox' types.
+
+2. YOLO Net Tests:
+    - Within the 'group8' directory, navigate to 'src/test/java/yolo'. Note that 'TestFrame.png' has no bounding boxes around the objects.
+
+    - Open a new terminal and run the 'mvn exec:java -Dexec.mainClass="yolo.YOLOTest" -Dexec.classpathScope="test"' command. Wait for full completion and an extra minute to generate files.
+
+    - To verify the functionality of YOLO Net, check that the 'TestFrame.png' image now contains bounding boxes. There will also be a new 'TestFrame.csv' file created in the current directory; for further verification, check that the values in that file are identical to those in the 'KeyFrame_0060.csv' file containing the ground truth values.
+
+Execution:
+----------
+To compile and run the project:
+1. Execute `./install.sh`
+2. Run `source ~/.bashrc`
+3. Execute `mvn clean install -DskipTests` to build the project, skipping tests during development to speed up the build process.
+4. Run `mvn exec:java` to execute the main application, which will start the configured object detection or VSLAM process as specified in the pom.xml file's main class configuration.
+5. Open up chrome and go to http://localhost:5555/ 
+6. You should be able to see objects detected using yolo and tracked in 3d space using our algorithm. Select various objects and see them represnted in the 3D point map
+
+This documentation ensures that any student or developer can set up, understand, and use the project from scratch on a compatible machine.

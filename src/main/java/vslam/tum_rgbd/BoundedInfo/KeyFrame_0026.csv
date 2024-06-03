@@ -1,0 +1,4 @@
+Class,Confidence,X,Y,Width,Height
+mouse,0.973950,52,373,52,42
+bottle,0.883179,108,254,36,81
+chair,0.663597,362,99,23,76

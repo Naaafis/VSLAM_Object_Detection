@@ -1,0 +1,5 @@
+Class,Confidence,X,Y,Width,Height
+vase,0.994552,179,301,77,102
+vase,0.774514,568,442,72,38
+tvmonitor,0.699291,50,114,312,181
+pottedplant,0.529260,470,269,169,213

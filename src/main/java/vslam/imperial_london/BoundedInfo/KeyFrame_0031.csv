@@ -1,0 +1,4 @@
+Class,Confidence,X,Y,Width,Height
+sofa,0.992697,-2,251,278,225
+chair,0.991532,323,252,85,101
+diningtable,0.789564,224,344,413,135

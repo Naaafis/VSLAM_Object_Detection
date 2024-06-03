@@ -1,0 +1,4 @@
+Class,Confidence,X,Y,Width,Height
+keyboard,0.997031,114,116,230,149
+mouse,0.995179,259,309,75,60
+tvmonitor,0.868870,171,-1,232,158
